@@ -12,5 +12,5 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     window.addEventListener("scroll", revealEvents);
-    revealEvents();
+    revealEvents(); // Ensure events appear if already in view
 });
