@@ -27,16 +27,30 @@ header {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     opacity: 0;
     transform: translateY(50px);
-    transition: all 0.6s ease-in-out;
+    transition: all 0.8s ease-in-out;
+    position: relative;
+    max-width: 600px;
+}
+
+/* Alternate Left and Right Alignment */
+.event.left {
+    margin-left: 0;
+    transform: translateX(-50px);
+}
+
+.event.right {
+    margin-left: auto;
+    transform: translateX(50px);
+}
+
+/* Scroll Animation */
+.event.show {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .event img {
     width: 100%;
     max-width: 500px;
     border-radius: 8px;
-}
-
-.event.show {
-    opacity: 1;
-    transform: translateY(0);
 }
