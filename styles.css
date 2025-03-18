@@ -4,7 +4,8 @@ body {
     padding: 0;
     background: #f4f4f4;
     color: #333;
-    perspective: 1000px; /* 👀 3D Perspective */
+    perspective: 1000px;
+    transition: background 0.3s, color 0.3s;
 }
 
 header {
@@ -12,15 +13,49 @@ header {
     padding: 20px;
     background: #2c3e50;
     color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
+#dark-mode-toggle {
+    padding: 8px 12px;
+    cursor: pointer;
+    border: none;
+    background: #444;
+    color: white;
+    border-radius: 5px;
+}
+
+/* DARK MODE */
+body.dark-mode {
+    background: #1e1e1e;
+    color: white;
+}
+
+body.dark-mode .event {
+    background: #333;
+    color: white;
+}
+
+/* FILTER */
+.controls {
+    text-align: center;
+    margin: 10px 0;
+}
+
+#event-filter {
+    padding: 8px;
+    font-size: 16px;
+}
+
+/* EVENTS */
 .timeline {
     width: 80%;
     margin: auto;
     padding: 20px;
 }
 
-/* EVENTS STYLING */
 .event {
     background: white;
     padding: 20px;
@@ -35,30 +70,18 @@ header {
     transform-origin: center;
 }
 
-/* Alternate Left & Right */
-.event.left {
-    margin-left: 0;
-    transform: translateX(-50px) rotateY(-10deg);
-}
-
-.event.right {
-    margin-left: auto;
-    transform: translateX(50px) rotateY(10deg);
-}
-
-/* SCROLL ANIMATION */
+/* SCROLL EFFECT */
 .event.show {
     opacity: 1;
     transform: translateX(0) rotateY(0);
 }
 
-/* HOVER 3D EFFECT */
+/* HOVER 3D */
 .event:hover {
     transform: scale(1.05) rotateX(5deg) rotateY(5deg);
     box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* IMAGE STYLING */
 .event img {
     width: 100%;
     max-width: 500px;
@@ -66,7 +89,17 @@ header {
     transition: transform 0.3s ease-out;
 }
 
-/* IMAGE HOVER ZOOM */
 .event:hover img {
     transform: scale(1.1);
+}
+
+/* MAP */
+.map-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+#islamic-map {
+    width: 80%;
+    max-width: 800px;
 }
